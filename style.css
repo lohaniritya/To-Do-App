@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 100px;
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    background-color: white;
+    height: 550px;
+    width:550px;
+    padding: 10px;
+}
+
+#inputBox{
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    box-shadow: 0px 0px 2px grey;
+    display: block;
+    border-radius: 5px;
+}
+
+ul li{
+    position: relative;
+    padding:10px;
+    padding-right: 32px;
+    background-color: #686565;
+    color: white;
+    margin-top: 10px;
+    list-style: none;
+    border-radius: 5px;
+    text-align: justify;
+}
+
+ul li i{
+    position: absolute;
+    right: 10px;
+    top:11px;
+}
+
+.toggleStyle{
+    text-decoration: line-through;
+}
