@@ -11,7 +11,7 @@ A straightforward to-do list web application built with HTML, CSS, and JavaScrip
 
 ## Screenshots
 
-![Screenshot](image.png)
+![Screenshot](images/img.png)
 
 ## Technologies Used
 
