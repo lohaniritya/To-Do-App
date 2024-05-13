@@ -1,27 +1,47 @@
-const inputbox = document.querySelector("#inputBox");
-const item = document.querySelector("#item");
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
 
-inputbox.addEventListener("keyup", function (Event) {
-  if (Event.key == "Enter") {
-    addItem(this.value);
-    this.value = "";
-  }
+
+inputBox.addEventListener("keyup", function (Event) {
+    if (Event.key == "Enter") {
+      addTask();
+    }
 });
 
-const addItem = (data) => {
-  const listItem = document.createElement("li");
-  listItem.innerHTML = `
-         ${data}
-        <i class="fa-solid fa-circle-check"></i>
-    `;
 
-  listItem.addEventListener("click", function () {
-    this.classList.toggle("toggleStyle");
-  });
+function addTask(){
 
-  listItem.querySelector("i").addEventListener("click", function () {
-    listItem.remove();
-  });
+    if(inputBox.value === ''){
+      alert("You must write something!");
+    }
+    else{
+      let li = document.createElement("li");
+      li.innerHTML = inputBox.value;
+      listContainer.appendChild(li);
+      let span = document.createElement("span");
+      span.innerHTML = "\u00d7";
+      li.appendChild(span);
+    }
+    inputBox.value = "";
+    saveData();
+}
 
-  item.appendChild(listItem);
-};
+listContainer.addEventListener("click", function(e){
+  if(e.target.tagName === "LI"){
+    e.target.classList.toggle("checked");
+    saveData();
+  }
+  else if(e.target.tagName === "SPAN"){
+    e.target.parentElement.remove();
+    saveData();
+  }
+}, false);
+
+function saveData(){
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showTask(){
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+showTask();
