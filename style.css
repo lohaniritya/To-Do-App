@@ -116,10 +116,7 @@ ul li span:hover{
     button{
         padding: 16px 25px;
     }
-}
-  
-@media(max-width:350px) {
-    input{
+    #input-box{
         max-width: 120px;
     }
 }
